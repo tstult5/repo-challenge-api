@@ -1,0 +1,57 @@
+swagger: "2.0"
+info:
+  description: DivvyDose   API
+  version: "1.0.0"
+  title: DivvyDose  API
+  
+schemes:
+ - "http"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/"
+
+paths:
+  /universal/application-version:
+    get:
+      operationId: "api.universal_api.get_application_version"
+      tags:
+       - application
+      summary: "Gets version and release information"
+      description: "Gets version and release information"
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+  /repositories/organization/{organization_name}/team/{team_name}:
+    get:
+      operationId: api.repository_api.get_repositories_by_organization_and_team
+      tags:
+       - repositories
+      summary: "Retreive code repository information for an Organization with the organization name for Github, and the team name for BitBucket. By specifying include_repo_detail parameter you can opt to receive the details of each repo."
+      parameters:
+        - name: organization_name
+          description: Name of the GitHub organization
+          in: path
+          type: string
+          required: True
+        - name: team_name
+          description: Name of the BitBucket team
+          in: path
+          type: string
+          required: True
+        - name: include_repo_detail
+          description: true or false - to include details of all repos in the response
+          in: query
+          type: string
+          required: False
+      description: "Retreive repository"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: "string"
+ 

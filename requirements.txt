@@ -1,0 +1,12 @@
+certifi==2019.3.9
+Click==7.0
+connexion==2.4.0
+dataclasses==0.6
+dataclasses-serialization==1.2.4
+Flask==1.0.4
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+swagger-ui-bundle==0.0.5
+typing==3.7.4.1
+Werkzeug==0.15.2
