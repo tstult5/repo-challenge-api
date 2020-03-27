@@ -1,0 +1,35 @@
+How to run the service app (will be available at localhost port 5000):
+
+from the command line:
+make run
+
+File descriptions:
+
+README - short descriptions of each file and instructions for running the service
+Makefile - simple Makefile to interact with provided example code
+requirements.txt - list of python requirements to be installed via pip
+
+note, in lieu of writing tests for api layer, which would entail building mock requests, I opted to include a Swagger API page to test directly with:
+     http://127.0.0.1:5000/ui/ ( full swagger API test harness page)
+
+
+This service is structured as follows:
+
+divvy-dose-api
+divvy-dose-api.yml
+  The routing declarations for endpoints in openAPI yaml format. Used to generate swagger UI as well. (opted instead of putting @app.route() annotations in api layer)
+
+- api
+  controller layer where requests are parsed and validated. Handles all http response building, building DTOs from Json
+
+- dto
+  dto definitions for the api
+  
+- service
+  - repository_service
+    service layer where all business logic occurs. DTOs are input/output
+- client
+  - api_clients.py  Api clients to call github and bitbucket apis
+ 
+- cache
+  - sample in-memory cache maps to store api calls 

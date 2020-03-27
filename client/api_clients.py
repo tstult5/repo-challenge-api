@@ -14,7 +14,7 @@ class GitHubAPIClient():
         self.github_headers = {'Accept':'application/vnd.github.mercy-preview+json'}
         
     def get_repository_for_organization_name(self, organization_name:str):
-        """ Gets original public repositories. NOTE github caps unauthorized calls at 60 PER HOUR.  Need to configure user or Token """
+        """ Gets original public repositories. NOTE github caps unauthorized calls at 60 PER HOUR.  Need to configure user or Token, else it will give 403s and warn you."""
         url_repo_by_organization = '/orgs/{}/repos'
 
         try:
