@@ -9,4 +9,4 @@ Jinja2==2.10.1
 MarkupSafe==1.1.1
 swagger-ui-bundle==0.0.5
 typing==3.7.4.1
-Werkzeug==0.15.2
+Werkzeug==0.15.3
